@@ -59,7 +59,16 @@ export class Chicken {
       this.eggs += 2;
     }, 2000);
   }
+
+  feedChicken() {
+    this.hunger = 0;
+  }
+
+  collectEggs() {
+    this.eggs = 0;
+  }
 }
+
 
 export class Cow {
   constructor () {
@@ -77,6 +86,14 @@ export class Cow {
     setInterval(() => {
       this.milkLevel += 2;
     }, 1000);
+  }
+
+  feedCow() {
+    this.hunger = 0;
+  }
+
+  milkCow() {
+    this.milkLevel = 0;
   }
 }
 

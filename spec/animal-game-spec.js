@@ -20,6 +20,11 @@ describe ('Hungry Fish', function() {
     jasmine.clock().tick(2001);
     expect(fish.hunger).toEqual(1);
   });
+
+  it('should reset the hunger level to 0 when the fish is fed', function() {
+    fish.feedFish();
+    expect(fish.hunger).toEqual(0);
+  });
 });
 
 describe ('Hungry Chicken', function() {
@@ -45,6 +50,16 @@ describe ('Hungry Chicken', function() {
     expect(chicken.hunger).toEqual(1);
     expect(chicken.eggs).toEqual(2);
   });
+
+  it('should reset the hunger level to 0 when the chicken is fed', function() {
+    chicken.feedChicken();
+    expect(chicken.hunger).toEqual(0);
+  });
+
+  it('should reset the egg level to 0 when the eggs have been collected', function() {
+    chicken.collectEggs();
+    expect(chicken.eggs).toEqual(0);
+  });
 });
 
 describe ('Hungry Cow', function() {
@@ -69,6 +84,16 @@ describe ('Hungry Cow', function() {
     jasmine.clock().tick(2001);
     expect(cow.hunger).toEqual(1);
     expect(cow.milkLevel).toEqual(4);
+  });
+
+  it('should reset the hunger level to 0 when the cow is satisfied', function() {
+    cow.feedCow();
+    expect(cow.hunger).toEqual(0);
+  });
+
+  it('should reset the milk level to 0 when the cow is really satisfied', function() {
+    cow.milkCow();
+    expect(cow.milkLevel).toEqual(0);
   });
 });
 
