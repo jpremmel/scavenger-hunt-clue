@@ -36,6 +36,10 @@ export class Fish {
       this.hunger++;
     }, 2000);
   }
+
+  feedFish() {
+    this.hunger = 0;
+  }
 }
 
 export class Chicken {
