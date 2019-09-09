@@ -1,5 +1,9 @@
-h1 {
+body {
   text-align: center;
+}
+
+#start-over {
+  display: none;
 }
 
 .btn {
@@ -17,6 +21,14 @@ h1 {
   margin: 10px;
 }
 
-h4 {
-  text-align: center;
+#fish-card {
+  display: none;
+}
+
+#chicken-card {
+  display: none;
+}
+
+#end-game {
+  display: none;
 }

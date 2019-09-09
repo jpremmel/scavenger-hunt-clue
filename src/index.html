@@ -9,15 +9,16 @@
       <form id="new-game">
         <button type="submit" class="btn btn-success">New Game</button>
       </form>
+      <button class="btn btn-success" id="start-over">Start Over</button>
       <div class="farm">
 
-        <div class="card">
+        <div class="card" id="fish-card">
           <h4 class="card-title">Fish</h4>
           <p>Hunger level: <span id="fish-hunger"></span></p>
           <button class="btn btn-success" id="feed-fish">Feed</button>
         </div>
 
-        <div class="card">
+        <div class="card" id="chicken-card">
           <h4 class="card-title">Chicken</h4>
           <p>Hunger level: <span id="chicken-hunger"></span></p>
           <p>Eggs: <span id="chicken-egg-level"></span></p>
@@ -26,8 +27,7 @@
         </div>
 
       </div>
-      <div id="end-game">
-      </div>
+      <h2 id="end-game">GAME OVER</h2>
     </div>
   </body>
 </html>
