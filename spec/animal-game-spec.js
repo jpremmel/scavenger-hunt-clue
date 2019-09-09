@@ -1,4 +1,4 @@
-import { Fish, Chicken, Cow, Dog } from '../src/animal-game.js';
+import { Farm, Fish, Chicken, Cow, Dog, Bear } from '../src/animal-game.js';
 
 describe ('Hungry Fish', function() {
   let fish;
@@ -94,5 +94,42 @@ describe ('Hungry Dog', function() {
     jasmine.clock().tick(1001);
     expect(dog.hunger).toEqual(2);
     expect(dog.energyLevel).toEqual(2);
+  });
+});
+
+describe ('Hungry Bear', function() {
+  let bear;
+
+  beforeEach(function() {
+    bear = new Bear();
+    jasmine.clock().install();
+    bear.setHunger();
+  });
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
+
+  it('should have a hunger level of 0 when it is created', function() {
+    expect(bear.hunger).toEqual(0);
+  });
+
+  it('should have a hunger level of 4 after 1 second', function() {
+    jasmine.clock().tick(1001);
+    expect(bear.hunger).toEqual(4);
+  });
+});
+
+describe('Farm', function() {
+  let farm = new Farm();
+
+  it('should have a fish property and an animals array (containing only the fish) upon creation', function() {
+    expect(farm.fish.hunger).toEqual(0);
+    expect(farm.animals.length).toEqual(1);
+  });
+
+  it('should have a method to add a chicken to the farm', function() {
+    farm.addChicken();
+    expect(farm.chicken.hunger).toEqual(0);
+    expect(farm.animals.length).toEqual(2);
   });
 });

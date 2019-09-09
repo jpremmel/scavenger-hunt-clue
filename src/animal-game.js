@@ -1,3 +1,16 @@
+export class Farm {
+  constructor () {
+    this.fish = new Fish();
+    this.animals = [this.fish];
+  }
+
+  addChicken() {
+    this.chicken = new Chicken();
+    this.animals.push(this.chicken);
+  }
+}
+
+
 export class Fish {
   constructor () {
     this.hunger = 0;
@@ -64,5 +77,17 @@ export class Dog {
     setInterval(() => {
       this.energyLevel += 2;
     }, 1000);
+  }
+}
+
+export class Bear {
+  constructor () {
+    this.hunger = 0;
+  }
+
+  setHunger() {
+    setInterval(() => {
+      this.hunger += 2;
+    }, 500);
   }
 }
