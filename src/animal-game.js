@@ -28,3 +28,22 @@ export class Chicken {
     }, 2000);
   }
 }
+
+export class Cow {
+  constructor () {
+    this.hunger = 0;
+    this.milkLevel = 0;
+  }
+
+  setHunger() {
+    setInterval(() => {
+      this.hunger++;
+    }, 2000);
+  }
+
+  setMilk() {
+    setInterval(() => {
+      this.milkLevel += 2;
+    }, 1000);
+  }
+}
