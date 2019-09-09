@@ -5,7 +5,7 @@ export class Fish {
 
   setHunger() {
     setInterval(() => {
-      this.hunger ++;
-    }, 2000)
+      this.hunger++;
+    }, 2000);
   }
 }
