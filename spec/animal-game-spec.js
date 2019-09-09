@@ -132,4 +132,22 @@ describe('Farm', function() {
     expect(farm.chicken.hunger).toEqual(0);
     expect(farm.animals.length).toEqual(2);
   });
+
+  it('should have a method to add a cow to the farm', function() {
+    farm.addCow();
+    expect(farm.cow.hunger).toEqual(0);
+    expect(farm.animals.length).toEqual(3);
+  });
+
+  it('should have a method to add a dog to the farm', function() {
+    farm.addDog();
+    expect(farm.dog.hunger).toEqual(0);
+    expect(farm.animals.length).toEqual(4);
+  });
+
+  it('should have a method to add a bear to the farm', function() {
+    farm.addBear();
+    expect(farm.bear.hunger).toEqual(0);
+    expect(farm.animals.length).toEqual(5);
+  });
 });

@@ -8,6 +8,21 @@ export class Farm {
     this.chicken = new Chicken();
     this.animals.push(this.chicken);
   }
+
+  addCow() {
+    this.cow = new Cow();
+    this.animals.push(this.cow);
+  }
+
+  addDog() {
+    this.dog = new Dog();
+    this.animals.push(this.dog);
+  }
+
+  addBear() {
+    this.bear = new Bear();
+    this.animals.push(this.bear);
+  }
 }
 
 
