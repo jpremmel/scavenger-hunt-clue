@@ -47,3 +47,22 @@ export class Cow {
     }, 1000);
   }
 }
+
+export class Dog {
+  constructor () {
+    this.hunger = 0;
+    this.energyLevel = 0;
+  }
+
+  setHunger() {
+    setInterval(() => {
+      this.hunger += 2;
+    }, 1000);
+  }
+
+  setEnergy() {
+    setInterval(() => {
+      this.energyLevel += 2;
+    }, 1000);
+  }
+}
