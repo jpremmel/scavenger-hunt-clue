@@ -34,6 +34,7 @@ $(document).ready(function() {
           clearInterval(intervals[i]);
         }
         $("#end-game").show();
+        turnOffButtons();
       }
       if (secondsPassed === 20 && farm.animals.length === 1) {
         secondsPassed = 0;
@@ -63,6 +64,7 @@ $(document).ready(function() {
             clearInterval(intervals[i]);
           }
           $("#end-game").show();
+          turnOffButtons();
         }
         $("#chicken-egg-level").text(farm.chicken.eggs);
         if(farm.chicken.eggs === 10) {
@@ -80,6 +82,7 @@ $(document).ready(function() {
             clearInterval(intervals[i]);
           }
           $("#end-game").show();
+          turnOffButtons();
         }
         if (secondsPassed === 20 && farm.animals.length === 2) {
           secondsPassed = 0;
@@ -109,6 +112,7 @@ $(document).ready(function() {
               clearInterval(intervals[i]);
             }
             $("#end-game").show();
+            turnOffButtons();
           }
           $("#cow-milk-level").text(farm.cow.milkLevel);
           if(farm.cow.milkLevel === 10) {
@@ -126,6 +130,7 @@ $(document).ready(function() {
               clearInterval(intervals[i]);
             }
             $("#end-game").show();
+            turnOffButtons();
           }
           if (secondsPassed === 20 && farm.animals.length === 3) {
             secondsPassed = 0;
@@ -155,6 +160,7 @@ $(document).ready(function() {
                 clearInterval(intervals[i]);
               }
               $("#end-game").show();
+              turnOffButtons();
             }
             $("#dog-energy-level").text(farm.dog.energyLevel);
             if(farm.dog.energyLevel === 10) {
@@ -172,6 +178,7 @@ $(document).ready(function() {
                 clearInterval(intervals[i]);
               }
               $("#end-game").show();
+              turnOffButtons();
             }
             if (secondsPassed === 20 && farm.animals.length === 4) {
               secondsPassed = 0;
@@ -200,6 +207,7 @@ $(document).ready(function() {
                   clearInterval(intervals[i]);
                 }
                 $("#end-game").show();
+                turnOffButtons();
               }
             }, 500));
           }
@@ -261,5 +269,16 @@ $(document).ready(function() {
   $("#start-over").click(function() {
     location.reload();
   });
+
+  function turnOffButtons() {
+    $("#feed-fish").off();
+    $("#feed-chicken").off();
+    $("#collect-eggs").off();
+    $("#feed-cow").off();
+    $("#milk").off();
+    $("#feed-dog").off();
+    $("#walk").off();
+    $("#feed-bear").off();
+  }
 
 });
