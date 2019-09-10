@@ -173,12 +173,36 @@ $(document).ready(function() {
               }
               $("#end-game").show();
             }
-            // if (secondsPassed === 20 && farm.animals.length === 3) {
-            //   secondsPassed = 0;
-            //   addDogCard();
-            // }
+            if (secondsPassed === 20 && farm.animals.length === 4) {
+              secondsPassed = 0;
+              addBearCard();
+            }
           }, 500));
 
+          function addBearCard() {
+            $("#bear-card").show();
+            farm.addBear();
+            let bearHunger = farm.bear.setHunger();
+            intervals.push(setInterval(function() {
+              $("#bear-hunger").text(farm.bear.hunger);
+              if(farm.bear.hunger === 10) {
+                $("#feed-bear").removeClass("btn-success");
+                $("#bear-hunger").addClass("warning");
+                $("#feed-bear").addClass("btn-warning");
+              } else if (farm.bear.hunger === 12) {
+                $("#feed-bear").removeClass("btn-warning");
+                $("#bear-hunger").removeClass("warning");
+                $("#feed-bear").addClass("btn-danger");
+                $("#bear-hunger").addClass("danger");
+              } else if (farm.bear.hunger === 16) {
+                clearInterval(bearHunger);
+                for (let i = 0; i < intervals.length; i++) {
+                  clearInterval(intervals[i]);
+                }
+                $("#end-game").show();
+              }
+            }, 500));
+          }
         }
       }
     }
@@ -226,8 +250,12 @@ $(document).ready(function() {
       $("#walk").addClass("btn-success");
       farm.dog.walkDog();
     });
-
-
+    $("#feed-bear").click(function() {
+      $("#feed-bear").removeClass("btn-danger btn-warning");
+      $("#bear-hunger").removeClass("warning danger");
+      $("#feed-bear").addClass("btn-success");
+      farm.bear.feedBear();
+    });
   });
 
   $("#start-over").click(function() {

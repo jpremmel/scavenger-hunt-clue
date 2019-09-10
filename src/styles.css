@@ -20,6 +20,10 @@ h3 {
   margin-top: 10px;
 }
 
+.feed-only {
+  margin-top: 45px;
+}
+
 .card {
   width: 300px;
   height: 260px;
@@ -49,25 +53,30 @@ h3 {
 }
 
 #fish-card {
-  /* display: none; */
+  display: none;
   float: right;
 }
 
 #chicken-card {
-  /* display: none; */
+  display: none;
   float: left;
 }
 
 #cow-card {
-  /* display: none; */
+  display: none;
   float: right;
 }
 
 #dog-card {
-  /* display: none; */
+  display: none;
   float: left;
 }
 
+#bear-card{
+  display: none;
+
+}
+
 #end-game {
-  /* display: none; */
+  display: none;
 }

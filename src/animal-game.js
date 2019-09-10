@@ -134,4 +134,8 @@ export class Bear {
       this.hunger += 2;
     }, 500);
   }
+
+  feedBear() {
+    this.hunger = 0;
+  }
 }
