@@ -120,6 +120,16 @@ describe ('Hungry Dog', function() {
     expect(dog.hunger).toEqual(2);
     expect(dog.energyLevel).toEqual(2);
   });
+
+  it('should reset the hunger level to 0 when the dog has been fed', function() {
+    dog.feedDog();
+    expect(dog.hunger).toEqual(0);
+  });
+
+  it('should reset the energy level to 0 when the dog has been walked', function() {
+    dog.walkDog();
+    expect(dog.energyLevel).toEqual(0);
+  });
 });
 
 describe ('Hungry Bear', function() {
@@ -141,6 +151,11 @@ describe ('Hungry Bear', function() {
   it('should have a hunger level of 4 after 1 second', function() {
     jasmine.clock().tick(1001);
     expect(bear.hunger).toEqual(4);
+  });
+
+  it('should reset the hunger level to 0 when the bear has been fed', function() {
+    bear.feedBear();
+    expect(bear.hunger).toEqual(0);
   });
 });
 
