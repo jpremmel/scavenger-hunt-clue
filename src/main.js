@@ -17,7 +17,7 @@ $(document).ready(function() {
     let fishHunger = farm.fish.setHunger();
     intervals.push(setInterval(function() {
       $("#fish-hunger").text(farm.fish.hunger);
-      secondsPassed++;
+      secondsPassed += 0.5;
       console.log(secondsPassed);
       if (farm.fish.hunger === 10) {
         $("#feed-fish").removeClass("btn-success");
@@ -39,7 +39,7 @@ $(document).ready(function() {
         secondsPassed = 0;
         addChickenCard();
       }
-    }, 1000));
+    }, 500));
 
     function addChickenCard() {
       $("#chicken-card").show();
@@ -81,12 +81,108 @@ $(document).ready(function() {
           }
           $("#end-game").show();
         }
-        // if (secondsPassed === 20) {
-        //   secondsPassed = 0;
-        //   addChickenCard();
-        // }
-      }, 1000));
+        if (secondsPassed === 20 && farm.animals.length === 2) {
+          secondsPassed = 0;
+          addCowCard();
+        }
+      }, 500));
+
+      function addCowCard() {
+        $("#cow-card").show();
+        farm.addCow();
+        let cowHunger = farm.cow.setHunger();
+        let cowMilk = farm.cow.setMilk();
+        intervals.push(setInterval(function() {
+          $("#cow-hunger").text(farm.cow.hunger);
+          if(farm.cow.hunger === 10) {
+            $("#feed-cow").removeClass("btn-success");
+            $("#cow-hunger").addClass("warning");
+            $("#feed-cow").addClass("btn-warning");
+          } else if (farm.cow.hunger === 13) {
+            $("#feed-cow").removeClass("btn-warning");
+            $("#cow-hunger").removeClass("warning");
+            $("#feed-cow").addClass("btn-danger");
+            $("#cow-hunger").addClass("danger");
+          } else if (farm.cow.hunger === 15) {
+            clearInterval(cowHunger);
+            for (let i = 0; i < intervals.length; i++) {
+              clearInterval(intervals[i]);
+            }
+            $("#end-game").show();
+          }
+          $("#cow-milk-level").text(farm.cow.milkLevel);
+          if(farm.cow.milkLevel === 10) {
+            $("#milk").removeClass("btn-success");
+            $("#cow-milk-level").addClass("warning");
+            $("#milk").addClass("btn-warning");
+          } else if (farm.cow.milkLevel === 12) {
+            $("#milk").removeClass("btn-warning");
+            $("#cow-milk-level").removeClass("warning");
+            $("#milk").addClass("btn-danger");
+            $("#cow-milk-level").addClass("danger");
+          } else if (farm.cow.milkLevel === 16) {
+            clearInterval(cowMilk);
+            for (let i = 0; i < intervals.length; i++) {
+              clearInterval(intervals[i]);
+            }
+            $("#end-game").show();
+          }
+          if (secondsPassed === 20 && farm.animals.length === 3) {
+            secondsPassed = 0;
+            addDogCard();
+          }
+        }, 500));
+
+        function addDogCard() {
+          $("#dog-card").show();
+          farm.addDog();
+          let dogHunger = farm.dog.setHunger();
+          let dogEnergy = farm.dog.setEnergy();
+          intervals.push(setInterval(function() {
+            $("#dog-hunger").text(farm.dog.hunger);
+            if(farm.dog.hunger === 10) {
+              $("#feed-dog").removeClass("btn-success");
+              $("#dog-hunger").addClass("warning");
+              $("#feed-dog").addClass("btn-warning");
+            } else if (farm.dog.hunger === 13) {
+              $("#feed-dog").removeClass("btn-warning");
+              $("#dog-hunger").removeClass("warning");
+              $("#feed-dog").addClass("btn-danger");
+              $("#dog-hunger").addClass("danger");
+            } else if (farm.dog.hunger === 15) {
+              clearInterval(dogHunger);
+              for (let i = 0; i < intervals.length; i++) {
+                clearInterval(intervals[i]);
+              }
+              $("#end-game").show();
+            }
+            $("#dog-energy-level").text(farm.dog.energyLevel);
+            if(farm.dog.energyLevel === 10) {
+              $("#walk").removeClass("btn-success");
+              $("#dog-energy-level").addClass("warning");
+              $("#walk").addClass("btn-warning");
+            } else if (farm.dog.energyLevel === 12) {
+              $("#walk").removeClass("btn-warning");
+              $("#dog-energy-level").removeClass("warning");
+              $("#walk").addClass("btn-danger");
+              $("#dog-energy-level").addClass("danger");
+            } else if (farm.dog.energyLevel === 16) {
+              clearInterval(dogEnergy);
+              for (let i = 0; i < intervals.length; i++) {
+                clearInterval(intervals[i]);
+              }
+              $("#end-game").show();
+            }
+            // if (secondsPassed === 20 && farm.animals.length === 3) {
+            //   secondsPassed = 0;
+            //   addDogCard();
+            // }
+          }, 500));
+
+        }
+      }
     }
+
 
     $('#feed-fish').click(function() {
       $("#feed-fish").removeClass("btn-danger btn-warning");
@@ -106,6 +202,31 @@ $(document).ready(function() {
       $("#collect-eggs").addClass("btn-success");
       farm.chicken.collectEggs();
     });
+    $("#feed-cow").click(function() {
+      $("#feed-cow").removeClass("btn-danger btn-warning");
+      $("#cow-hunger").removeClass("warning danger");
+      $("#feed-cow").addClass("btn-success");
+      farm.cow.feedCow();
+    });
+    $("#milk").click(function() {
+      $("#milk").removeClass("btn-danger btn-warning");
+      $("#cow-milk-level").removeClass("warning danger");
+      $("#milk").addClass("btn-success");
+      farm.cow.milkCow();
+    });
+    $("#feed-dog").click(function() {
+      $("#feed-dog").removeClass("btn-danger btn-warning");
+      $("#dog-hunger").removeClass("warning danger");
+      $("#feed-dog").addClass("btn-success");
+      farm.dog.feedDog();
+    });
+    $("#walk").click(function() {
+      $("#walk").removeClass("btn-danger btn-warning");
+      $("#dog-energy-level").removeClass("warning danger");
+      $("#walk").addClass("btn-success");
+      farm.dog.walkDog();
+    });
+
 
   });
 

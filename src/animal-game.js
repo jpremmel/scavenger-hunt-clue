@@ -56,8 +56,8 @@ export class Chicken {
 
   setEggs() {
     setInterval(() => {
-      this.eggs += 2;
-    }, 2000);
+      this.eggs++;
+    }, 1000);
   }
 
   feedChicken() {
@@ -84,8 +84,8 @@ export class Cow {
 
   setMilk() {
     setInterval(() => {
-      this.milkLevel += 2;
-    }, 1000);
+      this.milkLevel++;
+    }, 500);
   }
 
   feedCow() {
@@ -105,14 +105,22 @@ export class Dog {
 
   setHunger() {
     setInterval(() => {
-      this.hunger += 2;
-    }, 1000);
+      this.hunger++;
+    }, 500);
   }
 
   setEnergy() {
     setInterval(() => {
-      this.energyLevel += 2;
-    }, 1000);
+      this.energyLevel++;
+    }, 500);
+  }
+
+  feedDog() {
+    this.hunger = 0;
+  }
+
+  walkDog() {
+    this.energyLevel = 0;
   }
 }
 

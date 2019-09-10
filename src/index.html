@@ -11,21 +11,47 @@
       </form>
       <button class="btn btn-success" id="start-over">Start Over</button>
       <div class="farm">
-
-        <div class="card" id="fish-card">
-          <h3 class="card-title">Fish</h3>
-          <h4>Hunger level: <span class="level" id="fish-hunger"></span></h4>
-          <button class="btn btn-success" id="feed-fish">Feed</button>
+        <div class="row">
+          <div class="col">
+            <div class="card" id="fish-card">
+              <h3 class="card-title">Fish</h3>
+              <h4>Hunger level: <span class="level" id="fish-hunger"></span></h4>
+              <button class="btn btn-success" id="feed-fish">Feed</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="chicken-card">
+              <h3 class="card-title">Chicken</h3>
+              <h4>Hunger level: <span class="level" id="chicken-hunger"></span></h4>
+              <button class="btn btn-success" id="feed-chicken">Feed</button>
+              <h4>Eggs: <span class="level" id="chicken-egg-level"></span></h4>
+              <button class="btn btn-success" id="collect-eggs">Collect Eggs</button>
+            </div>
+          </div>
         </div>
-
-        <div class="card" id="chicken-card">
-          <h3 class="card-title">Chicken</h3>
-          <h4>Hunger level: <span class="level" id="chicken-hunger"></span></h4>
-          <button class="btn btn-success" id="feed-chicken">Feed</button>
-          <h4>Eggs: <span class="level" id="chicken-egg-level"></span></h4>
-          <button class="btn btn-success" id="collect-eggs">Collect Eggs</button>
+        <div class="row">
+          <div class="col">
+            <div class="card" id="cow-card">
+              <h3 class="card-title">Cow</h3>
+              <h4>Hunger level: <span class="level" id="cow-hunger"></span></h4>
+              <button class="btn btn-success" id="feed-cow">Feed</button>
+              <h4>Milk: <span class="level" id="cow-milk-level"></span></h4>
+              <button class="btn btn-success" id="milk">Milk That Cow</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="dog-card">
+              <h3 class="card-title">Dog</h3>
+              <h4>Hunger level: <span class="level" id="dog-hunger"></span></h4>
+              <button class="btn btn-success" id="feed-dog">Feed</button>
+              <h4>Energy Level: <span class="level" id="dog-energy-level"></span></h4>
+              <button class="btn btn-success" id="walk">Walk That Dog</button>
+            </div>
+          </div>
         </div>
-
+        <div class="row">
+          <!-- bear card -->
+        </div>
       </div>
       <h2 id="end-game">GAME OVER</h2>
     </div>
