@@ -50,14 +50,24 @@
           </div>
         </div>
         <div class="row">
-          <div class="card" id="bear-card">
-            <h3 class="card-title">Bear</h3>
-            <h4>Hunger level: <span class="level" id="bear-hunger"></span></h4>
-            <button class="btn btn-success feed-only" id="feed-bear">Feed</button>
+          <div class="col bear-col-left">
+            <img id="left-bear" src="img/bear-dance.gif" alt="dancing bear gif">
+          </div>
+          <div class="col bear-col">
+            <div class="card" id="bear-card">
+              <h3 class="card-title">Bear</h3>
+              <h4>Hunger level: <span class="level" id="bear-hunger"></span></h4>
+              <button class="btn btn-success feed-only" id="feed-bear">Feed</button>
+            </div>
+          </div>
+          <div class="col bear-col-right">
+            <img id="right-bear" src="img/bear-dance.gif" alt="dancing bear gif">
           </div>
         </div>
       </div>
       <h1 id="end-game">GAME OVER</h1>
+      <div class="gif">
+      </div>
     </div>
   </body>
 </html>

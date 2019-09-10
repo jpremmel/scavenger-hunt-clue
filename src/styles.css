@@ -36,6 +36,11 @@ h3 {
   margin-right: auto;
 }
 
+img {
+  height: 240px;
+  margin-top: 15px;
+}
+
 .level {
   font-weight: bold;
 }
@@ -72,9 +77,24 @@ h3 {
   float: left;
 }
 
-#bear-card{
+.bear-col-left {
   display: none;
+}
 
+.bear-col {
+  display: none;
+}
+
+.bear-col-right {
+  display: none;
+}
+
+#left-bear {
+  float: right;
+}
+
+#right-bear {
+  float: left;
 }
 
 #end-game {

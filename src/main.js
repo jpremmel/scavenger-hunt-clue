@@ -18,7 +18,6 @@ $(document).ready(function() {
     intervals.push(setInterval(function() {
       $("#fish-hunger").text(farm.fish.hunger);
       secondsPassed += 0.5;
-      console.log(secondsPassed);
       if (farm.fish.hunger === 10) {
         $("#feed-fish").removeClass("btn-success");
         $("#fish-hunger").addClass("warning");
@@ -35,6 +34,7 @@ $(document).ready(function() {
         }
         $("#end-game").show();
         turnOffButtons();
+        generateGif();
       }
       if (secondsPassed === 20 && farm.animals.length === 1) {
         secondsPassed = 0;
@@ -65,6 +65,7 @@ $(document).ready(function() {
           }
           $("#end-game").show();
           turnOffButtons();
+          generateGif();
         }
         $("#chicken-egg-level").text(farm.chicken.eggs);
         if(farm.chicken.eggs === 10) {
@@ -83,6 +84,7 @@ $(document).ready(function() {
           }
           $("#end-game").show();
           turnOffButtons();
+          generateGif();
         }
         if (secondsPassed === 20 && farm.animals.length === 2) {
           secondsPassed = 0;
@@ -113,6 +115,7 @@ $(document).ready(function() {
             }
             $("#end-game").show();
             turnOffButtons();
+            generateGif();
           }
           $("#cow-milk-level").text(farm.cow.milkLevel);
           if(farm.cow.milkLevel === 10) {
@@ -131,6 +134,7 @@ $(document).ready(function() {
             }
             $("#end-game").show();
             turnOffButtons();
+            generateGif();
           }
           if (secondsPassed === 20 && farm.animals.length === 3) {
             secondsPassed = 0;
@@ -161,6 +165,7 @@ $(document).ready(function() {
               }
               $("#end-game").show();
               turnOffButtons();
+              generateGif();
             }
             $("#dog-energy-level").text(farm.dog.energyLevel);
             if(farm.dog.energyLevel === 10) {
@@ -179,6 +184,7 @@ $(document).ready(function() {
               }
               $("#end-game").show();
               turnOffButtons();
+              generateGif();
             }
             if (secondsPassed === 20 && farm.animals.length === 4) {
               secondsPassed = 0;
@@ -187,7 +193,9 @@ $(document).ready(function() {
           }, 500));
 
           function addBearCard() {
-            $("#bear-card").show();
+            $(".bear-col-left").show()
+            $(".bear-col").show();
+            $(".bear-col-right").show();
             farm.addBear();
             let bearHunger = farm.bear.setHunger();
             intervals.push(setInterval(function() {
@@ -208,6 +216,7 @@ $(document).ready(function() {
                 }
                 $("#end-game").show();
                 turnOffButtons();
+                generateGif();
               }
             }, 500));
           }
@@ -279,6 +288,25 @@ $(document).ready(function() {
     $("#feed-dog").off();
     $("#walk").off();
     $("#feed-bear").off();
+  }
+
+  function generateGif () {
+    // let request = new XMLHttpRequest();
+    // const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.API_KEY}&rating=g&tag=bear`;
+    //
+    // request.onreadystatechange = function() {
+    //   if (this.readyState === 4 && this.status === 200) {
+    //     const response = JSON.parse(this.responseText);
+    //     getElements(response);
+    //   }
+    // }
+    //
+    // request.open("GET", url, true);
+    // request.send();
+    //
+    // const getElements = function(response) {
+    //   $('.gif').html(`<img src="${response.data.images.downsized_medium.url}">`);
+    // }
   }
 
 });
