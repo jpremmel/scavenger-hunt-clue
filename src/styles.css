@@ -7,10 +7,16 @@ body {
 }
 
 .btn {
-  margin: 5px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -19,6 +25,22 @@ body {
   border-width: medium;
   border-color: #28a745;
   margin: 10px;
+}
+
+.level {
+  font-weight: bold;
+}
+
+.success {
+  color: #28a745;
+}
+
+.warning {
+  color: #ffc107;
+}
+
+.danger {
+  color: #dc3545;
 }
 
 #fish-card {

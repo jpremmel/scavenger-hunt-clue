@@ -21,9 +21,12 @@ $(document).ready(function() {
       console.log(secondsPassed);
       if (farm.fish.hunger === 10) {
         $("#feed-fish").removeClass("btn-success");
+        $("#fish-hunger").addClass("warning");
         $("#feed-fish").addClass("btn-warning");
       } else if (farm.fish.hunger === 13) {
         $("#feed-fish").removeClass("btn-warning");
+        $("#fish-hunger").removeClass("warning");
+        $("#fish-hunger").addClass("danger");
         $("#feed-fish").addClass("btn-danger");
       } else if (farm.fish.hunger === 15) {
         clearInterval(fishHunger);
@@ -32,7 +35,7 @@ $(document).ready(function() {
         }
         $("#end-game").show();
       }
-      if (secondsPassed === 20) {
+      if (secondsPassed === 20 && farm.animals.length === 1) {
         secondsPassed = 0;
         addChickenCard();
       }
@@ -47,10 +50,13 @@ $(document).ready(function() {
         $("#chicken-hunger").text(farm.chicken.hunger);
         if(farm.chicken.hunger === 10) {
           $("#feed-chicken").removeClass("btn-success");
+          $("#chicken-hunger").addClass("warning");
           $("#feed-chicken").addClass("btn-warning");
         } else if (farm.chicken.hunger === 13) {
-          $("#feed-chicken").removeClass("btn-success");
-          $("#feed-chicken").addClass("btn-warning");
+          $("#feed-chicken").removeClass("btn-warning");
+          $("#chicken-hunger").removeClass("warning");
+          $("#feed-chicken").addClass("btn-danger");
+          $("#chicken-hunger").addClass("danger");
         } else if (farm.chicken.hunger === 15) {
           clearInterval(chickenHunger);
           for (let i = 0; i < intervals.length; i++) {
@@ -61,11 +67,14 @@ $(document).ready(function() {
         $("#chicken-egg-level").text(farm.chicken.eggs);
         if(farm.chicken.eggs === 10) {
           $("#collect-eggs").removeClass("btn-success");
+          $("#chicken-egg-level").addClass("warning");
           $("#collect-eggs").addClass("btn-warning");
-        } else if (farm.chicken.eggs === 13) {
-          $("#collect-eggs").removeClass("btn-success");
-          $("#collect-eggs").addClass("btn-warning");
-        } else if (farm.chicken.eggs === 15) {
+        } else if (farm.chicken.eggs === 12) {
+          $("#collect-eggs").removeClass("btn-warning");
+          $("#chicken-egg-level").removeClass("warning");
+          $("#collect-eggs").addClass("btn-danger");
+          $("#chicken-egg-level").addClass("danger");
+        } else if (farm.chicken.eggs === 16) {
           clearInterval(chickenHunger);
           for (let i = 0; i < intervals.length; i++) {
             clearInterval(intervals[i]);
@@ -81,16 +90,19 @@ $(document).ready(function() {
 
     $('#feed-fish').click(function() {
       $("#feed-fish").removeClass("btn-danger btn-warning");
+      $("#fish-hunger").removeClass("warning danger");
       $("#feed-fish").addClass("btn-success");
       farm.fish.feedFish();
     });
     $("#feed-chicken").click(function() {
       $("#feed-chicken").removeClass("btn-danger btn-warning");
+      $("#chicken-hunger").removeClass("warning danger");
       $("#feed-chicken").addClass("btn-success");
       farm.chicken.feedChicken();
     });
     $("#collect-eggs").click(function() {
       $("#collect-eggs").removeClass("btn-danger btn-warning");
+      $("#chicken-egg-level").removeClass("warning danger");
       $("#collect-eggs").addClass("btn-success");
       farm.chicken.collectEggs();
     });
