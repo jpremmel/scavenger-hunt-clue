@@ -2,43 +2,39 @@ body {
   text-align: center;
 }
 
-#start-over {
-  display: none;
+h1, h4, p {
+  color: #4d1919;
 }
 
-.btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
+#start-over {
+  display: none;
+  margin-left: 0px;
   margin-bottom: 15px;
 }
 
-h3 {
-  font-weight: bold;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.feed-only {
-  margin-top: 45px;
+.btn {
+  display: inline-block;
+  margin-left: 25px;
 }
 
 .card {
-  width: 300px;
-  height: 260px;
+  width: 350px;
+  height: 160px;
   padding: 10px;
   border-width: medium;
-  border-color: #28a745;
+  border-color: #4d1919;
   margin: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+.feed-only {
+  margin-top: 30px;
+}
+
 img {
-  height: 240px;
-  margin-top: 15px;
+  height: 170px;
 }
 
 .level {
@@ -57,35 +53,21 @@ img {
   color: #dc3545;
 }
 
-#fish-card {
+#fish-card, #cow-card {
   display: none;
   float: right;
 }
 
-#chicken-card {
+#chicken-card, #dog-card {
   display: none;
   float: left;
 }
 
-#cow-card {
-  display: none;
-  float: right;
+#bear-card {
+  height: 140px;
 }
 
-#dog-card {
-  display: none;
-  float: left;
-}
-
-.bear-col-left {
-  display: none;
-}
-
-.bear-col {
-  display: none;
-}
-
-.bear-col-right {
+.bear-col-left, .bear-col, .bear-col-right {
   display: none;
 }
 
@@ -99,5 +81,5 @@ img {
 
 #end-game {
   display: none;
-  color: #dc3545;
+  color: #4d1919;
 }

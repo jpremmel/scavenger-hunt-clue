@@ -8,7 +8,6 @@ $(document).ready(function() {
   $("#new-game").submit(function(event) {
     event.preventDefault();
     $("#new-game").hide();
-    $("#start-over").show();
     $("#fish-card").show();
     let farm = new Farm();
     let intervals = [];
@@ -33,10 +32,11 @@ $(document).ready(function() {
           clearInterval(intervals[i]);
         }
         $("#end-game").show();
+        $("#start-over").show();
         turnOffButtons();
         generateGif();
       }
-      if (secondsPassed === 20 && farm.animals.length === 1) {
+      if (secondsPassed === 10 && farm.animals.length === 1) {
         secondsPassed = 0;
         addChickenCard();
       }
@@ -64,6 +64,7 @@ $(document).ready(function() {
             clearInterval(intervals[i]);
           }
           $("#end-game").show();
+          $("#start-over").show();
           turnOffButtons();
           generateGif();
         }
@@ -83,6 +84,7 @@ $(document).ready(function() {
             clearInterval(intervals[i]);
           }
           $("#end-game").show();
+          $("#start-over").show();
           turnOffButtons();
           generateGif();
         }
@@ -114,6 +116,7 @@ $(document).ready(function() {
               clearInterval(intervals[i]);
             }
             $("#end-game").show();
+            $("#start-over").show();
             turnOffButtons();
             generateGif();
           }
@@ -133,6 +136,7 @@ $(document).ready(function() {
               clearInterval(intervals[i]);
             }
             $("#end-game").show();
+            $("#start-over").show();
             turnOffButtons();
             generateGif();
           }
@@ -164,6 +168,7 @@ $(document).ready(function() {
                 clearInterval(intervals[i]);
               }
               $("#end-game").show();
+              $("#start-over").show();
               turnOffButtons();
               generateGif();
             }
@@ -183,6 +188,7 @@ $(document).ready(function() {
                 clearInterval(intervals[i]);
               }
               $("#end-game").show();
+              $("#start-over").show();
               turnOffButtons();
               generateGif();
             }
@@ -215,6 +221,7 @@ $(document).ready(function() {
                   clearInterval(intervals[i]);
                 }
                 $("#end-game").show();
+                $("#start-over").show();
                 turnOffButtons();
                 generateGif();
               }
@@ -223,7 +230,6 @@ $(document).ready(function() {
         }
       }
     }
-
 
     $('#feed-fish').click(function() {
       $("#feed-fish").removeClass("btn-danger btn-warning");
