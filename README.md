@@ -6,7 +6,7 @@
 
 ## Description
 
-_A silly game we made in coding bootcamp. [Play it here!](https://jpremmel.github.io/animal-game/ "Animal Game")_
+_A silly game we made in coding bootcamp._
 
 ## (Some) Specifications
 
