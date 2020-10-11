@@ -4,7 +4,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const merge = require('webpack-merge');
+const productionConfig = merge([
+  {
+    output: {
+      publicPath: '/animal-game/'
+    },
+  }
+]);
 
 module.exports = {
   entry: './src/main.js',
