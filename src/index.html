@@ -1,73 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Animal Game</title>
+    <title>Scavenger Hunt Clue</title>
   </head>
   <body>
     <div class="container">
-      <h1>Animal Game</h1>
-      <form id="new-game">
-        <button type="submit" class="btn btn-success">New Game</button>
-      </form>
-      <div class="farm">
+      <h3>Welcome to your next</h3>
+      <h1>Scavenger Hunt Clue!</h1>
+      <br/>
+      <div class="question">
+        <h4>Are you Willow?</h4>
+      </div>
+      <br/>
+
+      <div id="answer-options">
         <div class="row">
-          <div class="col-sm-6">
-            <div class="card" id="fish-card">
-              <h4>Fish</h4>
-              <p class="feed-only">Hunger level: <span class="level" id="fish-hunger"></span>
-              <button class="btn btn-success" id="feed-fish">Feed</button></p>
+          <div class="col-md-6">
+            <div class="card" id="yes-card">
+              <h5>Yes</h5>
+              <button class="btn btn-success" id="yes-btn">Yes, I am Willow</button></p>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card" id="chicken-card">
-              <h4>Chicken</h4>
-              <p>Hunger level: <span class="level" id="chicken-hunger"></span>
-              <button class="btn btn-success" id="feed-chicken">Feed</button></p>
-              <p>Eggs: <span class="level" id="chicken-egg-level"></span>
-              <button class="btn btn-success" id="collect-eggs">Collect Eggs</button></p>
+          <div class="col-md-6">
+            <div class="card" id="no-card">
+              <h5>No</h5>
+              <button class="btn btn-danger" id="no-btn">No, I am not Willow</button></p>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card" id="cow-card">
-              <h4>Cow</h4>
-              <p>Hunger level: <span class="level" id="cow-hunger"></span>
-              <button class="btn btn-success" id="feed-cow">Feed</button></p>
-              <p>Milk level: <span class="level" id="cow-milk-level"></span>
-              <button class="btn btn-success" id="milk">Milk That Cow</button></p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card" id="dog-card">
-              <h4>Dog</h4>
-              <p>Hunger level: <span class="level" id="dog-hunger"></span>
-              <button class="btn btn-success" id="feed-dog">Feed</button></p>
-              <p>Energy level: <span class="level" id="dog-energy-level"></span>
-              <button class="btn btn-success" id="walk">Walk That Dog</button></p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col bear-col-left">
-            <img id="left-bear" src="img/bear-dance.gif" alt="dancing bear gif">
-          </div>
-          <div class="col bear-col">
-            <div class="card" id="bear-card">
-              <h4>Bear</h4>
-              <p class="feed-only">Hunger level: <span class="level" id="bear-hunger"></span>
-              <button class="btn btn-success" id="feed-bear">Feed</button></p>
-            </div>
-          </div>
-          <div class="col bear-col-right">
-            <img id="right-bear" src="img/bear-dance.gif" alt="dancing bear gif">
           </div>
         </div>
       </div>
-      <h1 id="end-game">GAME OVER</h1>
-      <div class="gif">
+
+      <div id="yes-response">
+        <p>Time to get in the car</p>
+        <img id="gif" src="img/loser-meangirls.gif" alt="gif from Mean Girls 'Get in loser we're going shopping'">
       </div>
-      <button class="btn btn-success" id="start-over">Start Over</button>
+      <div id="no-response">
+        <p>Go away</p>
+        <img id="gif-no" src="img/learn-how-to-fucking-drive-coach.gif" alt="gif of Coach from Letterkenny aggressively saying 'Learn how to fucking drive'">
+      </div>
+      <br/>
+      <button class="btn btn-warning" id="reset-btn">Try again</button></p>
+
     </div>
   </body>
 </html>
