@@ -8,7 +8,7 @@ const merge = require('webpack-merge');
 const productionConfig = merge([
   {
     output: {
-      publicPath: '/animal-game/'
+      publicPath: '/scavenger-hunt-clue/'
     },
   }
 ]);

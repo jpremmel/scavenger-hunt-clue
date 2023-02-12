@@ -6,7 +6,7 @@
 
 ## Description
 
-_A clue in a surprise birthday scavenger hunt. 
+A clue in a surprise birthday scavenger hunt. 
 
 -------
 
